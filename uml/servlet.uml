@@ -1,0 +1,46 @@
+@startuml
+
+abstract DbServlet {
+	action()
+}
+
+abstract JspServlet {
+	view()
+}
+
+abstract AuthenticationServlet {
+	view()
+}
+
+class ImageServlet{
+}
+
+class TopServlet {
+}
+
+class LoginServlet {
+}
+
+class PostMessageServlet {
+}
+
+class MessageServlet {
+}
+
+class LogoutServlet {
+}
+
+class UserServlet {
+}
+
+DbServlet <|-down- JspServlet
+DbServlet <|- ImageServlet
+JspServlet <|-down- AuthenticationServlet
+JspServlet <|-down- LoginServlet
+AuthenticationServlet <|-down- TopServlet
+AuthenticationServlet <|-down- PostMessageServlet
+AuthenticationServlet <|-down- MessageServlet
+AuthenticationServlet <|-down- LogoutServlet
+AuthenticationServlet <|-down- UserServlet
+
+@enduml
